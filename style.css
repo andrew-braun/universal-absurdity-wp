@@ -1166,6 +1166,9 @@
   .hero-slider div {
       outline: none;
     }
+  .hero-slider .t-center {
+      white-space: normal;
+  }
   .hero-slider__interior {
       padding-top: 60px;
       padding-bottom: 60px;
