@@ -9,4 +9,9 @@ function universal_imports() {
 
 add_action("wp_enqueue_scripts", "universal_imports");
 
+function universal_features() {
+    add_theme_support("title-tag");
+}
+add_action("after_setup_theme", "universal_features");
+
 ?>
