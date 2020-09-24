@@ -1596,7 +1596,8 @@
   .page-links {
       margin: 0 0 40px 20px;
       width: 300px;
-      float: right
+      float: right;
+      
   }
     }
   .page-links__title {
@@ -1615,6 +1616,7 @@
         }
   .page-links li {
       border-top: 1px solid rgb(244, 223, 138);
+      list-style: none;
     }
   .page-links li:first-child {
       border-top: none;
