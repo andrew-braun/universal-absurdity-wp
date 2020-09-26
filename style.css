@@ -1503,9 +1503,9 @@
   .generic-content h5 {font-size: 1.6rem}
   .generic-content h6 {font-size: 1.15rem}
   @media (min-width: 530px) {
-      .generic-content h1 {font-size: 6.25rem}
-      .generic-content h2 {font-size: 5rem}
-      .generic-content h3 {font-size: 3.125rem}
+      .generic-content h1 {font-size: 4rem}
+      .generic-content h2 {font-size: 3.2rem}
+      .generic-content h3 {font-size: 2.8rem}
       .generic-content h4 {font-size: 2.4rem}
       .generic-content h5 {font-size: 1.9rem}
       .generic-content h6 {font-size: 1.15rem}
@@ -1711,12 +1711,23 @@
     }
   .post-item {
     border-bottom: 1px dotted #DEDEDE;
-    padding-bottom: 1.7rem;
-    margin-bottom: 1.7rem;
+    padding-bottom: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
   }
   .post-item:last-of-type {
       border-bottom: none;
       margin-bottom: 0;
     }
-  
+  .post-categories {
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
+  .post-categories li {
+    list-style: none;
+    width: min-content;
+    margin: 0;
+    padding: 0;
+  }
   
