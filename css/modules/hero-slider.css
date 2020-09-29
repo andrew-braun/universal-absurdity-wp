@@ -32,6 +32,10 @@
 
 }
 
+.hero-slider .t-center {
+  white-space: normal;
+}
+
 .slick-dots {
   z-index: 100;
   position: absolute;
