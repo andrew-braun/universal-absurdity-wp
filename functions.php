@@ -26,4 +26,23 @@ function universal_features() {
 /* Execute the add features action */
 add_action("after_setup_theme", "universal_features");
 
+function universal_adjust_queries($query) {
+    $today = date("Ymd");
+    if (!is_admin() AND is_post_type_archive("event") AND $query->is_main_query()) {
+        $query->set("posts_per_page", 10);
+        $query->set("meta_key", "event_date");
+        $query->set("orderby", "meta_value");
+        $query->set("order", "ASC");
+        $query->set("order", "ASC");
+        $query->set("meta_query", array(
+            "key" => "event_date",
+            "compare" => ">=",
+            "value" => $today,
+            "type" => "numeric"
+        ));
+    }
+}
+
+add_action("pre_get_posts", "universal_adjust_queries");
+
 ?>
