@@ -1,17 +1,9 @@
 <?php
 get_header();
 while (have_posts()) {
-    the_post(); ?>
-
-    <div class="page-banner">
-        <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri("/images/ocean.jpg") ?>;"></div>
-        <div class="page-banner__content container container--narrow">
-            <h1 class="page-banner__title"><?php the_title(); ?></h1>
-            <div class="page-banner__intro">
-                <p>(REPLACE LATER)</p>
-            </div>
-        </div>
-    </div>
+    the_post(); 
+    pageBanner();
+    ?>
 
     <div class="container container--narrow page-section">
 
@@ -39,20 +31,21 @@ while (have_posts()) {
         if ($pageParent or $testArray) { ?>
             <div class="page-links">
                 <h2 class="page-links__title"><a href="<?php echo get_permalink($pageParent) ?>"><?php echo get_the_title($pageParent) ?></a></h2>
-                
-                <?php 
-                    if ($pageParent) {
-                        $pageId = $pageParent;
-                    } else {
-                        $pageId = get_the_ID();
-                    }
+                <ul>
+                    <?php 
+                        if ($pageParent) {
+                            $pageId = $pageParent;
+                        } else {
+                            $pageId = get_the_ID();
+                        }
 
-                    wp_list_pages(array(
-                        "title_li" => NULL,
-                        "child_of" => $pageId,
-                        "sort_column" => "menu_order"
-                    ));
-                ?>
+                        wp_list_pages(array(
+                            "title_li" => NULL,
+                            "child_of" => $pageId,
+                            "sort_column" => "menu_order"
+                        ));
+                    ?>
+                </ul>
             </div>
         <?php } ?>
 

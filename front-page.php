@@ -6,10 +6,10 @@
         <h1 class="headline headline--large">The Universe</h1>
         <h2 class="headline headline--medium">What does it all mean?</h2>
         <h3 class="headline headline--small">We don't know either. Let's find out together!</h3>
-        <a href="#" class="btn btn--large btn--blue">Find Your Field</a>
+        <a href="<?php echo get_post_type_archive_link("program"); ?>" class="btn btn--large btn--blue">Find Your Field</a>
     </div>
 </div>
-
+3
 <div class="full-width-split group">
     <div class="full-width-split__one">
         <div class="full-width-split__inner">
