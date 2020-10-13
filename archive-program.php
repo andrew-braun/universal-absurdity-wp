@@ -1,17 +1,10 @@
-<?php get_header() ?>
+<?php get_header();
+pageBanner(array(
+    "title" => "All Programs",
+    "subtitle" => "What do we do here, again?"
+));
+?>
 
-<div class="page-banner">
-    <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri("/images/ocean.jpg") ?>;"></div>
-    <div class="page-banner__content container container--narrow">
-        <h1 class="page-banner__title">
-            All Programs
-        </h1>
-        <div class="page-banner__intro">
-            <p>Study whatever. You'll probably learn to code later and get a job with that.</p>
-        </div>
-    </div>
-</div>
-</div>
 
 <div class="container container--narrow page-section">
     <ul class="link-list min-list">
