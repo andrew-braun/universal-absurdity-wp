@@ -89,4 +89,11 @@ function universal_adjust_queries($query) {
 
 add_action("pre_get_posts", "universal_adjust_queries");
 
+function universalMapKey($api) {
+    $api["key"] = "AIzaSyCaNJgJD-c3k0cGovvCiZASvlPAOJCn8jw";
+    return $api;
+}
+
+add_filter("acf/fields/google_map/api", "universalMapKey");
+
 ?>
