@@ -1,0 +1,644 @@
+[
+	{
+		"id": 65,
+		"date": "2020-10-04T11:40:24",
+		"date_gmt": "2020-10-04T11:40:24",
+		"guid": { "rendered": "http://universal-absurdity.local/?page_id=65" },
+		"modified": "2020-10-04T11:40:24",
+		"modified_gmt": "2020-10-04T11:40:24",
+		"slug": "past-events",
+		"status": "publish",
+		"type": "page",
+		"link": "http://universal-absurdity.local/past-events/",
+		"title": { "rendered": "Past Events" },
+		"content": { "rendered": "", "protected": false },
+		"excerpt": { "rendered": "", "protected": false },
+		"author": 1,
+		"featured_media": 0,
+		"parent": 0,
+		"menu_order": 0,
+		"comment_status": "closed",
+		"ping_status": "closed",
+		"template": "",
+		"meta": [],
+		"_links": {
+			"self": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/pages/65" }
+			],
+			"collection": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/pages" }
+			],
+			"about": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/types/page" }
+			],
+			"author": [
+				{
+					"embeddable": true,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/users/1"
+				}
+			],
+			"replies": [
+				{
+					"embeddable": true,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/comments?post=65"
+				}
+			],
+			"version-history": [
+				{
+					"count": 1,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/pages/65/revisions"
+				}
+			],
+			"predecessor-version": [
+				{
+					"id": 66,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/pages/65/revisions/66"
+				}
+			],
+			"wp:attachment": [
+				{
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/media?parent=65"
+				}
+			],
+			"curies": [
+				{ "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+			]
+		}
+	},
+	{
+		"id": 46,
+		"date": "2020-09-25T17:56:20",
+		"date_gmt": "2020-09-25T17:56:20",
+		"guid": { "rendered": "http://universal-absurdity.local/?page_id=46" },
+		"modified": "2020-09-25T17:56:20",
+		"modified_gmt": "2020-09-25T17:56:20",
+		"slug": "blog",
+		"status": "publish",
+		"type": "page",
+		"link": "http://universal-absurdity.local/blog/",
+		"title": { "rendered": "Blog" },
+		"content": { "rendered": "", "protected": false },
+		"excerpt": { "rendered": "", "protected": false },
+		"author": 1,
+		"featured_media": 0,
+		"parent": 0,
+		"menu_order": 0,
+		"comment_status": "closed",
+		"ping_status": "closed",
+		"template": "",
+		"meta": [],
+		"_links": {
+			"self": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/pages/46" }
+			],
+			"collection": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/pages" }
+			],
+			"about": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/types/page" }
+			],
+			"author": [
+				{
+					"embeddable": true,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/users/1"
+				}
+			],
+			"replies": [
+				{
+					"embeddable": true,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/comments?post=46"
+				}
+			],
+			"version-history": [
+				{
+					"count": 1,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/pages/46/revisions"
+				}
+			],
+			"predecessor-version": [
+				{
+					"id": 47,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/pages/46/revisions/47"
+				}
+			],
+			"wp:attachment": [
+				{
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/media?parent=46"
+				}
+			],
+			"curies": [
+				{ "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+			]
+		}
+	},
+	{
+		"id": 44,
+		"date": "2020-09-25T17:56:01",
+		"date_gmt": "2020-09-25T17:56:01",
+		"guid": { "rendered": "http://universal-absurdity.local/?page_id=44" },
+		"modified": "2020-09-25T17:56:01",
+		"modified_gmt": "2020-09-25T17:56:01",
+		"slug": "home",
+		"status": "publish",
+		"type": "page",
+		"link": "http://universal-absurdity.local/",
+		"title": { "rendered": "Home" },
+		"content": { "rendered": "", "protected": false },
+		"excerpt": { "rendered": "", "protected": false },
+		"author": 1,
+		"featured_media": 0,
+		"parent": 0,
+		"menu_order": 0,
+		"comment_status": "closed",
+		"ping_status": "closed",
+		"template": "",
+		"meta": [],
+		"_links": {
+			"self": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/pages/44" }
+			],
+			"collection": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/pages" }
+			],
+			"about": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/types/page" }
+			],
+			"author": [
+				{
+					"embeddable": true,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/users/1"
+				}
+			],
+			"replies": [
+				{
+					"embeddable": true,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/comments?post=44"
+				}
+			],
+			"version-history": [
+				{
+					"count": 1,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/pages/44/revisions"
+				}
+			],
+			"predecessor-version": [
+				{
+					"id": 45,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/pages/44/revisions/45"
+				}
+			],
+			"wp:attachment": [
+				{
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/media?parent=44"
+				}
+			],
+			"curies": [
+				{ "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+			]
+		}
+	},
+	{
+		"id": 25,
+		"date": "2020-09-23T13:21:29",
+		"date_gmt": "2020-09-23T13:21:29",
+		"guid": { "rendered": "http://universal-absurdity.local/?page_id=25" },
+		"modified": "2020-09-23T13:21:29",
+		"modified_gmt": "2020-09-23T13:21:29",
+		"slug": "cookie-policy",
+		"status": "publish",
+		"type": "page",
+		"link": "http://universal-absurdity.local/privacy-policy/cookie-policy/",
+		"title": { "rendered": "Cookie Policy" },
+		"content": {
+			"rendered": "\n<p>Jelly-o gummi bears wafer. Oat cake cupcake bonbon toffee. Jelly tiramisu gummi bears jelly beans drag\u00e9e drag\u00e9e cupcake fruitcake. Jelly beans pastry toffee halvah caramels. Jujubes chocolate cake croissant powder marshmallow lemon drops jujubes gingerbread gingerbread. Gummi bears macaroon ice cream jujubes gingerbread sesame snaps sweet tootsie roll. Toffee candy donut chupa chups sugar plum liquorice muffin tiramisu. Jujubes icing croissant sweet gummi bears jelly beans gummies liquorice. Sweet roll fruitcake candy gummies marshmallow. Sweet roll topping pastry oat cake chocolate cake. Oat cake jelly beans marshmallow jelly-o. Bear claw chocolate carrot cake chocolate cake marzipan pastry chocolate danish gummies. Sweet roll topping marshmallow.</p>\n\n\n\n<p>Wafer icing cotton candy oat cake. Toffee muffin jelly jelly beans toffee. Tart topping tiramisu tiramisu jelly. Danish chocolate chupa chups ice cream tootsie roll topping chocolate. Sesame snaps jelly topping tiramisu gummi bears. Cheesecake marzipan bonbon lemon drops. Wafer macaroon donut macaroon pudding pudding cupcake. Pie candy icing pastry fruitcake biscuit jelly beans chupa chups jelly. Powder cookie liquorice danish chocolate. Souffl\u00e9 lemon drops jelly beans tart wafer. Bear claw tiramisu muffin jelly-o donut cake. Cupcake macaroon pudding halvah pudding tootsie roll cupcake. Cake cake jelly tart biscuit biscuit wafer icing. Macaroon cupcake cake cupcake tart brownie.</p>\n\n\n\n<p>Cupcake brownie halvah gingerbread gingerbread brownie danish muffin. Caramels gummi bears pie. Sugar plum sweet roll chocolate gingerbread jelly halvah muffin. Marzipan macaroon bonbon gummies cake gummies lemon drops. Souffl\u00e9 bonbon cake. Sweet roll marzipan cake tootsie roll sweet. Sweet tart marzipan candy carrot cake topping. Pudding pudding gummies bonbon icing chupa chups. Icing jelly-o drag\u00e9e. Cupcake souffl\u00e9 cheesecake jelly beans. Sesame snaps gummi bears bonbon pie tiramisu. Cupcake carrot cake danish. Biscuit gummi bears croissant jujubes.</p>\n\n\n\n<p>Cheesecake cotton candy topping cheesecake icing. Ice cream biscuit marshmallow cake cake. Souffl\u00e9 jelly-o apple pie tootsie roll. Pudding jelly-o sugar plum gummies powder. Gummi bears cookie candy lemon drops chocolate cake lollipop gummies donut. Chocolate bar cookie lemon drops donut. Macaroon marshmallow sweet roll chupa chups jelly-o candy canes jelly donut. Marshmallow carrot cake lollipop. Icing ice cream pie marshmallow gummi bears powder sugar plum sweet roll gummies. Wafer jujubes tart jelly. Gummies halvah powder ice cream cupcake toffee biscuit jelly-o sweet. Marzipan gingerbread gummi bears biscuit. Bear claw topping apple pie. Carrot cake chupa chups caramels carrot cake cheesecake.</p>\n\n\n\n<p>Apple pie pudding danish halvah. Souffl\u00e9 toffee pastry. Gummies caramels sweet gingerbread. Toffee fruitcake halvah. Tart jelly sugar plum chocolate bar croissant cheesecake cake. Tart cookie drag\u00e9e chocolate bar tiramisu cookie gummies gummi bears jelly-o. Carrot cake cookie pastry chupa chups jelly-o chocolate bar. Oat cake chocolate bar sweet roll chocolate bar chocolate cake bonbon sweet roll tootsie roll. Carrot cake halvah sugar plum gingerbread jelly beans brownie. Chocolate bar chupa chups carrot cake bonbon fruitcake tootsie roll cake halvah caramels. Muffin gummi bears candy cake jelly beans carrot cake toffee jelly beans. Bonbon halvah powder chocolate bar candy canes pastry pudding. Tiramisu sesame snaps jelly beans.</p>\n",
+			"protected": false
+		},
+		"excerpt": {
+			"rendered": "<p>Jelly-o gummi bears wafer. Oat cake cupcake bonbon toffee. Jelly tiramisu gummi bears jelly beans drag\u00e9e drag\u00e9e cupcake fruitcake. Jelly beans pastry toffee halvah caramels. Jujubes chocolate cake croissant powder marshmallow lemon drops jujubes gingerbread gingerbread. Gummi bears macaroon ice cream jujubes gingerbread sesame snaps sweet tootsie roll. Toffee candy donut chupa chups sugar plum [&hellip;]</p>\n",
+			"protected": false
+		},
+		"author": 1,
+		"featured_media": 0,
+		"parent": 3,
+		"menu_order": 0,
+		"comment_status": "closed",
+		"ping_status": "closed",
+		"template": "",
+		"meta": [],
+		"_links": {
+			"self": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/pages/25" }
+			],
+			"collection": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/pages" }
+			],
+			"about": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/types/page" }
+			],
+			"author": [
+				{
+					"embeddable": true,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/users/1"
+				}
+			],
+			"replies": [
+				{
+					"embeddable": true,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/comments?post=25"
+				}
+			],
+			"version-history": [
+				{
+					"count": 1,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/pages/25/revisions"
+				}
+			],
+			"predecessor-version": [
+				{
+					"id": 26,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/pages/25/revisions/26"
+				}
+			],
+			"up": [
+				{
+					"embeddable": true,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/pages/3"
+				}
+			],
+			"wp:attachment": [
+				{
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/media?parent=25"
+				}
+			],
+			"curies": [
+				{ "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+			]
+		}
+	},
+	{
+		"id": 23,
+		"date": "2020-09-23T12:41:19",
+		"date_gmt": "2020-09-23T12:41:19",
+		"guid": { "rendered": "http://universal-absurdity.local/?page_id=23" },
+		"modified": "2020-09-23T12:41:19",
+		"modified_gmt": "2020-09-23T12:41:19",
+		"slug": "our-goals",
+		"status": "publish",
+		"type": "page",
+		"link": "http://universal-absurdity.local/about-us/our-goals/",
+		"title": { "rendered": "Our Goals" },
+		"content": {
+			"rendered": "\n<p>Our conscience can&#8217;t rest so long as 37 million Americans are poor and forgotten by their leaders in Washington and by the media elites. And today, whenever I find myself feeling doubtful or cynical about this possibility, what gives me the most hope is the next generation &#8211; the young people whose attitudes and beliefs and openness to change have already made history in this election. When a new flu infects one human being, all are at risk. This is a difficult responsibility to embrace. That does not lessen my commitment, however, to governments that reflect the will of the people.</p>\n\n\n\n<p>We meet at one of those defining moments &#8211; a moment when our nation is at war, our economy is in turmoil, and the American promise has been threatened once more. The fundamentals we use to measure economic strength are whether we are living up to that fundamental promise that has made this country great &#8211; a promise that is the only reason I am standing here tonight. We will, however, relentlessly confront violent extremists who pose a grave threat to our security. That is not how moral authority is claimed; that is how it is surrendered.</p>\n\n\n\n<p>Because it&#8217;s not who we are. But if we do, I can tell you that in the next election, we&#8217;ll be talking about some other distraction. Islam is not part of the problem in combating violent extremism &#8211; it is an important part of promoting peace. Unlike Afghanistan, Iraq was a war of choice that provoked strong differences in my country and around the world. But if we see this conflict only from one side or the other, then we will be blind to the truth: the only resolution is for the aspirations of both sides to be met through two states, where Israelis and Palestinians each live in peace and security.</p>\n\n\n\n<p>It is on your lips and in your heart. And they are a part of America, this country that I love. The fear and anger that it provoked was understandable, but in some cases, it led us to act contrary to our ideals. Finally, I want to discuss economic development and opportunity.</p>\n\n\n\n<p>There are patriots who opposed the war in Iraq and there are patriots who supported the war in Iraq. But I think they also sensed that a part of me remained removed and detached &#8211; that I was an observer in their midst. So let there be no doubt: the situation for the Palestinian people is intolerable. Now is the time for Palestinians to focus on what they can build. This history is well known.</p>\n\n\n\n<p>Thank you.</p>\n",
+			"protected": false
+		},
+		"excerpt": {
+			"rendered": "<p>Our conscience can&#8217;t rest so long as 37 million Americans are poor and forgotten by their leaders in Washington and by the media elites. And today, whenever I find myself feeling doubtful or cynical about this possibility, what gives me the most hope is the next generation &#8211; the young people whose attitudes and beliefs [&hellip;]</p>\n",
+			"protected": false
+		},
+		"author": 1,
+		"featured_media": 0,
+		"parent": 17,
+		"menu_order": 1,
+		"comment_status": "closed",
+		"ping_status": "closed",
+		"template": "",
+		"meta": [],
+		"_links": {
+			"self": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/pages/23" }
+			],
+			"collection": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/pages" }
+			],
+			"about": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/types/page" }
+			],
+			"author": [
+				{
+					"embeddable": true,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/users/1"
+				}
+			],
+			"replies": [
+				{
+					"embeddable": true,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/comments?post=23"
+				}
+			],
+			"version-history": [
+				{
+					"count": 1,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/pages/23/revisions"
+				}
+			],
+			"predecessor-version": [
+				{
+					"id": 24,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/pages/23/revisions/24"
+				}
+			],
+			"up": [
+				{
+					"embeddable": true,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/pages/17"
+				}
+			],
+			"wp:attachment": [
+				{
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/media?parent=23"
+				}
+			],
+			"curies": [
+				{ "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+			]
+		}
+	},
+	{
+		"id": 21,
+		"date": "2020-09-23T12:37:58",
+		"date_gmt": "2020-09-23T12:37:58",
+		"guid": { "rendered": "http://universal-absurdity.local/?page_id=21" },
+		"modified": "2020-09-23T12:39:04",
+		"modified_gmt": "2020-09-23T12:39:04",
+		"slug": "our-history",
+		"status": "publish",
+		"type": "page",
+		"link": "http://universal-absurdity.local/about-us/our-history/",
+		"title": { "rendered": "Our History" },
+		"content": {
+			"rendered": "\n<p>Cheese slices airedale jarlsberg. Brie st. agur blue cheese everyone loves croque monsieur cottage cheese cheese on toast boursin mascarpone. Port-salut mascarpone jarlsberg stilton roquefort cheddar stinking bishop stinking bishop. St. agur blue cheese hard cheese cheese and biscuits st. agur blue cheese danish fontina bavarian bergkase cheesecake pepper jack. Chalk and cheese cheesecake jarlsberg pepper jack babybel melted cheese smelly cheese fromage. Cheesy feet cheesecake cheese strings cheese strings cottage cheese red leicester cheesy grin pepper jack. Pepper jack airedale cream cheese paneer cheddar mozzarella boursin gouda. Cheeseburger gouda danish fontina goat hard cheese cheesy feet red leicester.</p>\n\n\n\n<p>Gouda pepper jack cream cheese. Cauliflower cheese macaroni cheese fondue cheesy grin roquefort cottage cheese cheesy grin fromage frais. Camembert de normandie cheesecake st. agur blue cheese hard cheese brie edam cheese triangles parmesan. Cheesy feet cottage cheese cheese and biscuits cheese slices manchego cottage cheese pecorino airedale. Port-salut cheese and wine halloumi everyone loves cheese slices fromage edam pepper jack. Brie cream cheese boursin chalk and cheese hard cheese cheesy grin who moved my cheese who moved my cheese. Cheeseburger parmesan st. agur blue cheese gouda cream cheese cottage cheese.</p>\n\n\n\n<p>Monterey jack chalk and cheese squirty cheese. Fromage caerphilly cottage cheese cheese strings gouda cheese and biscuits boursin caerphilly. Croque monsieur pepper jack ricotta who moved my cheese jarlsberg cheese and wine emmental cheddar. Camembert de normandie brie chalk and cheese croque monsieur blue castello swiss bavarian bergkase cauliflower cheese. Macaroni cheese bavarian bergkase macaroni cheese fromage frais ricotta manchego cheese on toast stilton. Cheeseburger parmesan the big cheese hard cheese everyone loves lancashire say cheese cheese and wine. Fromage frais red leicester taleggio blue castello camembert de normandie chalk and cheese manchego the big cheese. When the cheese comes out everybody&#8217;s happy pepper jack.</p>\n\n\n\n<p>Roquefort chalk and cheese red leicester. Cheesy feet feta cheese slices parmesan smelly cheese cottage cheese jarlsberg smelly cheese. Red leicester cheese on toast brie cheese and biscuits gouda pepper jack bavarian bergkase red leicester. Caerphilly cheese and wine emmental babybel taleggio cut the cheese cheesy grin goat. Stilton st. agur blue cheese brie hard cheese who moved my cheese red leicester halloumi pepper jack. Mozzarella cheeseburger.</p>\n\n\n\n<p>St. agur blue cheese pecorino red leicester. Stinking bishop brie goat everyone loves cheesecake cut the cheese cheesy grin halloumi. Gouda jarlsberg chalk and cheese cut the cheese mozzarella cottage cheese paneer cottage cheese. Who moved my cheese cheese slices bocconcini brie cheese strings ricotta babybel smelly cheese. Boursin macaroni cheese cottage cheese cheeseburger cheesecake melted cheese cow manchego. Edam red leicester emmental rubber cheese mozzarella cheese on toast fromage frais cheese strings. Cheese and biscuits.</p>\n",
+			"protected": false
+		},
+		"excerpt": {
+			"rendered": "<p>Cheese slices airedale jarlsberg. Brie st. agur blue cheese everyone loves croque monsieur cottage cheese cheese on toast boursin mascarpone. Port-salut mascarpone jarlsberg stilton roquefort cheddar stinking bishop stinking bishop. St. agur blue cheese hard cheese cheese and biscuits st. agur blue cheese danish fontina bavarian bergkase cheesecake pepper jack. Chalk and cheese cheesecake jarlsberg [&hellip;]</p>\n",
+			"protected": false
+		},
+		"author": 1,
+		"featured_media": 0,
+		"parent": 17,
+		"menu_order": 0,
+		"comment_status": "closed",
+		"ping_status": "closed",
+		"template": "",
+		"meta": [],
+		"_links": {
+			"self": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/pages/21" }
+			],
+			"collection": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/pages" }
+			],
+			"about": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/types/page" }
+			],
+			"author": [
+				{
+					"embeddable": true,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/users/1"
+				}
+			],
+			"replies": [
+				{
+					"embeddable": true,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/comments?post=21"
+				}
+			],
+			"version-history": [
+				{
+					"count": 1,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/pages/21/revisions"
+				}
+			],
+			"predecessor-version": [
+				{
+					"id": 22,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/pages/21/revisions/22"
+				}
+			],
+			"up": [
+				{
+					"embeddable": true,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/pages/17"
+				}
+			],
+			"wp:attachment": [
+				{
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/media?parent=21"
+				}
+			],
+			"curies": [
+				{ "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+			]
+		}
+	},
+	{
+		"id": 17,
+		"date": "2020-09-21T16:26:44",
+		"date_gmt": "2020-09-21T16:26:44",
+		"guid": { "rendered": "http://universal-absurdity.local/?page_id=17" },
+		"modified": "2020-10-12T19:01:26",
+		"modified_gmt": "2020-10-12T19:01:26",
+		"slug": "about-us",
+		"status": "publish",
+		"type": "page",
+		"link": "http://universal-absurdity.local/about-us/",
+		"title": { "rendered": "About You" },
+		"content": {
+			"rendered": "\n<p>Filo; state of play scale and impact uplift mobilize our work strategize. Capacity building; inclusion indicators; because, social intrapreneurship parse sustainable but. Black lives matter social impact radical best practices outcomes inspiring incubator efficient. Inspire think tank disrupt, radical catalyze think tank agile. Ideate, expose the truth shared value capacity building improve the world humanitarian movements. Ideate vibrant uplift, compassion best practices effective, replicable efficient. Philanthropy improve the world replicable, improve the world LGBTQ+ impact strategy incubator. Inclusive revolutionary framework philanthropy issue outcomes. Co-creation improve the world social enterprise expose the truth revolutionary impact co-create. Parse; to vibrant; social entrepreneurship because. Peaceful blended value catalyze outcomes citizen-centered philanthropy transparent. Catalyze activate, framework, human-centered circular change-makers collaborative consumption or empower. Segmentation energize natural resources, collaborative consumption incubator NGO impact investing academic innovation. Social innovation; shared value overcome injustice unprecedented challenge when LGBTQ+ scale and impact. Overcome injustice, radical; program area but,.</p>\n",
+			"protected": false
+		},
+		"excerpt": {
+			"rendered": "<p>Filo; state of play scale and impact uplift mobilize our work strategize. Capacity building; inclusion indicators; because, social intrapreneurship parse sustainable but. Black lives matter social impact radical best practices outcomes inspiring incubator efficient. Inspire think tank disrupt, radical catalyze think tank agile. Ideate, expose the truth shared value capacity building improve the world humanitarian [&hellip;]</p>\n",
+			"protected": false
+		},
+		"author": 1,
+		"featured_media": 0,
+		"parent": 0,
+		"menu_order": 0,
+		"comment_status": "closed",
+		"ping_status": "closed",
+		"template": "",
+		"meta": [],
+		"_links": {
+			"self": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/pages/17" }
+			],
+			"collection": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/pages" }
+			],
+			"about": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/types/page" }
+			],
+			"author": [
+				{
+					"embeddable": true,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/users/1"
+				}
+			],
+			"replies": [
+				{
+					"embeddable": true,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/comments?post=17"
+				}
+			],
+			"version-history": [
+				{
+					"count": 3,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/pages/17/revisions"
+				}
+			],
+			"predecessor-version": [
+				{
+					"id": 87,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/pages/17/revisions/87"
+				}
+			],
+			"wp:attachment": [
+				{
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/media?parent=17"
+				}
+			],
+			"curies": [
+				{ "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+			]
+		}
+	},
+	{
+		"id": 3,
+		"date": "2020-09-20T14:04:11",
+		"date_gmt": "2020-09-20T14:04:11",
+		"guid": { "rendered": "http://universal-absurdity.local/?page_id=3" },
+		"modified": "2020-09-22T17:08:36",
+		"modified_gmt": "2020-09-22T17:08:36",
+		"slug": "privacy-policy",
+		"status": "publish",
+		"type": "page",
+		"link": "http://universal-absurdity.local/privacy-policy/",
+		"title": { "rendered": "Privacy Policy" },
+		"content": {
+			"rendered": "\n<h2>Who we are</h2>\n\n\n\n<p>Our website address is: http://universal-absurdity.local.</p>\n\n\n\n<h2>What personal data we collect and why we collect it</h2>\n\n\n\n<h3>Comments</h3>\n\n\n\n<p>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor\u2019s IP address and browser user agent string to help spam detection.</p>\n\n\n\n<p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p>\n\n\n\n<h3>Media</h3>\n\n\n\n<p>If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p>\n\n\n\n<h3>Contact forms</h3>\n\n\n\n<h3>Cookies</h3>\n\n\n\n<p>If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.</p>\n\n\n\n<p>If you visit our login page, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.</p>\n\n\n\n<p>When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select &#8220;Remember Me&#8221;, your login will persist for two weeks. If you log out of your account, the login cookies will be removed.</p>\n\n\n\n<p>If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.</p>\n\n\n\n<h3>Embedded content from other websites</h3>\n\n\n\n<p>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p>\n\n\n\n<p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.</p>\n\n\n\n<h3>Analytics</h3>\n\n\n\n<h2>Who we share your data with</h2>\n\n\n\n<h2>How long we retain your data</h2>\n\n\n\n<p>If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.</p>\n\n\n\n<p>For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p>\n\n\n\n<h2>What rights you have over your data</h2>\n\n\n\n<p>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p>\n\n\n\n<h2>Where we send your data</h2>\n\n\n\n<p>Visitor comments may be checked through an automated spam detection service.</p>\n\n\n\n<h2>Your contact information</h2>\n\n\n\n<h2>Additional information</h2>\n\n\n\n<h3>How we protect your data</h3>\n\n\n\n<h3>What data breach procedures we have in place</h3>\n\n\n\n<h3>What third parties we receive data from</h3>\n\n\n\n<h3>What automated decision making and/or profiling we do with user data</h3>\n\n\n\n<h3>Industry regulatory disclosure requirements</h3>\n",
+			"protected": false
+		},
+		"excerpt": {
+			"rendered": "<p>Who we are Our website address is: http://universal-absurdity.local. What personal data we collect and why we collect it Comments When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor\u2019s IP address and browser user agent string to help spam detection. An anonymized string created from [&hellip;]</p>\n",
+			"protected": false
+		},
+		"author": 1,
+		"featured_media": 0,
+		"parent": 0,
+		"menu_order": 0,
+		"comment_status": "closed",
+		"ping_status": "open",
+		"template": "",
+		"meta": [],
+		"_links": {
+			"self": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/pages/3" }
+			],
+			"collection": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/pages" }
+			],
+			"about": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/types/page" }
+			],
+			"author": [
+				{
+					"embeddable": true,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/users/1"
+				}
+			],
+			"replies": [
+				{
+					"embeddable": true,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/comments?post=3"
+				}
+			],
+			"version-history": [
+				{
+					"count": 1,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/pages/3/revisions"
+				}
+			],
+			"predecessor-version": [
+				{
+					"id": 19,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/pages/3/revisions/19"
+				}
+			],
+			"wp:attachment": [
+				{
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/media?parent=3"
+				}
+			],
+			"curies": [
+				{ "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+			]
+		}
+	},
+	{
+		"id": 2,
+		"date": "2020-09-20T14:04:11",
+		"date_gmt": "2020-09-20T14:04:11",
+		"guid": { "rendered": "http://universal-absurdity.local/?page_id=2" },
+		"modified": "2020-09-20T14:04:11",
+		"modified_gmt": "2020-09-20T14:04:11",
+		"slug": "sample-page",
+		"status": "publish",
+		"type": "page",
+		"link": "http://universal-absurdity.local/sample-page/",
+		"title": { "rendered": "Sample Page" },
+		"content": {
+			"rendered": "\n<p>This is an example page. It&#8217;s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:</p>\n\n\n\n<blockquote class=\"wp-block-quote\"><p>Hi there! I&#8217;m a bike messenger by day, aspiring actor by night, and this is my website. I live in Los Angeles, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin&#8217; caught in the rain.)</p></blockquote>\n\n\n\n<p>&#8230;or something like this:</p>\n\n\n\n<blockquote class=\"wp-block-quote\"><p>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</p></blockquote>\n\n\n\n<p>As a new WordPress user, you should go to <a href=\"http://universal-absurdity.local/wp-admin/\">your dashboard</a> to delete this page and create new pages for your content. Have fun!</p>\n",
+			"protected": false
+		},
+		"excerpt": {
+			"rendered": "<p>This is an example page. It&#8217;s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this: Hi there! I&#8217;m a bike messenger [&hellip;]</p>\n",
+			"protected": false
+		},
+		"author": 1,
+		"featured_media": 0,
+		"parent": 0,
+		"menu_order": 0,
+		"comment_status": "closed",
+		"ping_status": "open",
+		"template": "",
+		"meta": [],
+		"_links": {
+			"self": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/pages/2" }
+			],
+			"collection": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/pages" }
+			],
+			"about": [
+				{ "href": "http://universal-absurdity.local/wp-json/wp/v2/types/page" }
+			],
+			"author": [
+				{
+					"embeddable": true,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/users/1"
+				}
+			],
+			"replies": [
+				{
+					"embeddable": true,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/comments?post=2"
+				}
+			],
+			"version-history": [
+				{
+					"count": 0,
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/pages/2/revisions"
+				}
+			],
+			"wp:attachment": [
+				{
+					"href": "http://universal-absurdity.local/wp-json/wp/v2/media?parent=2"
+				}
+			],
+			"curies": [
+				{ "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+			]
+		}
+	}
+]

@@ -27,10 +27,12 @@ class Search {
 	}
 
 	keyPressHandler(event) {
+		const activeElement = document.activeElement;
+		const inputs = ["input", "select", "button", "textarea"];
 		if (
 			event.key === "s" &&
 			this.isOverlayOpen === false &&
-			!$("input, textarea").is(":focus")
+			!inputs.includes(activeElement.tagName.toLowerCase())
 		) {
 			this.openOverlay();
 		}
@@ -58,8 +60,17 @@ class Search {
 	}
 
 	getSearchResults() {
-		this.searchResults.innerHTML = "Search results here";
-		this.isSpinnerVisible = false;
+		async function getJSON(searchTerm) {
+			const response = await fetch(
+				`http://universal-absurdity.local/wp-json/wp/v2/posts?search=${searchTerm}`
+			);
+			const data = await response.json();
+
+			console.log(data);
+			alert(data[0].title.rendered);
+			return data;
+		}
+		getJSON(this.searchTerm.value);
 	}
 
 	// 3. Events
