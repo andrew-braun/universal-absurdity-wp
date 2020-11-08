@@ -50,7 +50,7 @@ class Search {
 					this.searchResults.innerHTML = "<div class='spinner-loader'></div>";
 					this.isSpinnerVisible = true;
 				}
-				this.typingTimer = setTimeout(this.getSearchResults.bind(this), 750);
+				this.typingTimer = setTimeout(() => this.getSearchResults(), 750);
 				this.previousSearchValue = this.searchTerm.value;
 			}
 		} else {
@@ -60,17 +60,32 @@ class Search {
 	}
 
 	getSearchResults() {
+		const generateSearchResults = (data) => {
+			this.searchResults.innerHTML = data
+				.map(
+					(result) =>
+						`
+				<div class="search-result">
+				<h2 class="search-overlay__section-title">
+					<ul class="link-list min-list">
+						<li><a href="/${result.slug}">${result.title.rendered}</a></li>
+					</ul>
+				</div>
+				`
+				)
+				.join("");
+		};
+
 		async function getJSON(searchTerm) {
 			const response = await fetch(
 				`http://universal-absurdity.local/wp-json/wp/v2/posts?search=${searchTerm}`
 			);
 			const data = await response.json();
-
+			generateSearchResults(data);
 			console.log(data);
-			alert(data[0].title.rendered);
 			return data;
 		}
-		getJSON(this.searchTerm.value);
+		return getJSON(this.searchTerm.value);
 	}
 
 	// 3. Events
