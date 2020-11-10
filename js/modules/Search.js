@@ -50,7 +50,7 @@ class Search {
 					this.searchResults.innerHTML = "<div class='spinner-loader'></div>";
 					this.isSpinnerVisible = true;
 				}
-				this.typingTimer = setTimeout(() => this.getSearchResults(), 750);
+				this.typingTimer = setTimeout(() => this.getSearchResults(), 350);
 				this.previousSearchValue = this.searchTerm.value;
 			}
 		} else {
@@ -61,19 +61,30 @@ class Search {
 
 	getSearchResults() {
 		const generateSearchResults = (data) => {
-			this.searchResults.innerHTML = data
-				.map(
-					(result) =>
-						`
+			console.log(data.length);
+			if (data.length) {
+				this.searchResults.innerHTML = data
+					.map(
+						(result) =>
+							`
 				<div class="search-result">
-				<h2 class="search-overlay__section-title">
-					<ul class="link-list min-list">
-						<li><a href="/${result.slug}">${result.title.rendered}</a></li>
-					</ul>
+				<h2 class="search-overlay__section-title"></h2>
+				<ul class="link-list min-list">							
+					<li>
+						<a href="/${result.slug}">${result.title.rendered}</a>
+					</li>
+							
+				</ul>
 				</div>
 				`
-				)
-				.join("");
+					)
+					.join("");
+			} else {
+				this.searchResults.innerHTML = `
+				<div class="search-result">
+				<h2 class="search-overlay__section-title">No results found</h2>
+				</div>`;
+			}
 		};
 
 		async function getJSON(searchTerm) {
@@ -82,9 +93,9 @@ class Search {
 			);
 			const data = await response.json();
 			generateSearchResults(data);
-			console.log(data);
 			return data;
 		}
+
 		return getJSON(this.searchTerm.value);
 	}
 
