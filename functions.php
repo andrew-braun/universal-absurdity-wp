@@ -48,7 +48,9 @@ function universal_imports() {
         wp_enqueue_script("universal-js", get_theme_file_uri("/bundled-assets/scripts.5270ce0561d57b985c13.js"), NULL, "1.0", true);
         wp_enqueue_style("our-main-styles", get_theme_file_uri("/bundled-assets/styles.5270ce0561d57b985c13.css"));
     }
-
+    wp_localize_script("universal-js", "universalData", array(
+        "root_url" => get_site_url()
+    ));
 }
 /* Execute the import function */
 add_action("wp_enqueue_scripts", "universal_imports");
