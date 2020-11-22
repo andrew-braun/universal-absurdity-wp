@@ -18,6 +18,8 @@ class Search {
 	openOverlay() {
 		this.searchOverlay.classList.add("search-overlay--active");
 		document.querySelector("body").classList.add("body-no-scroll");
+		this.searchTerm.value = "";
+		setTimeout(() => this.searchTerm.focus(), 400);
 		this.isOverlayOpen = true;
 	}
 
@@ -64,7 +66,7 @@ class Search {
 		}
 	}
 
-	searchHandler(event) {
+	searchHandler() {
 		if (this.searchTerm.value !== this.previousSearchValue) {
 			clearTimeout(this.typingTimer);
 
@@ -73,7 +75,7 @@ class Search {
 					this.searchResults.innerHTML = "<div class='spinner-loader'></div>";
 					this.isSpinnerVisible = true;
 				}
-				this.typingTimer = setTimeout(() => this.getSearchResults(), 350);
+				this.typingTimer = setTimeout(() => this.getSearchResults(), 400);
 				this.previousSearchValue = this.searchTerm.value;
 			}
 		} else {
@@ -84,7 +86,6 @@ class Search {
 
 	getSearchResults() {
 		const generateSearchResults = (data) => {
-			console.log(data.length);
 			if (data.length) {
 				this.searchResults.innerHTML = data
 					.map(
@@ -94,7 +95,9 @@ class Search {
 				<h2 class="search-overlay__section-title"></h2>
 				<ul class="link-list min-list">							
 					<li>
-						<a href="/${result.slug}">${result.title.rendered}</a>
+						<a href="/${result.link}">${result.title}</a> ${
+								result.type == "post" ? `by ${result.authorName}` : ""
+							}
 					</li>
 							
 				</ul>
@@ -110,13 +113,35 @@ class Search {
 			}
 		};
 
+		const generateError = () => {
+			this.searchResults.innerHTML = `
+			<div class="search-result">
+				<p class="search-overlay__section-title">Uh-oh! You crashed the simulation. Your memory has been wiped, and you may try your search again.</p>
+			</div>`;
+		};
+
 		async function getJSON(searchTerm) {
-			const response = await fetch(
-				`${universalData.root_url}/wp-json/wp/v2/posts?search=${searchTerm}`
-			);
-			const data = await response.json();
-			generateSearchResults(data);
-			return data;
+			try {
+				const postResponse = await fetch(
+					`${universalData.root_url}/wp-json/content/v1/search?term=${searchTerm}`
+				);
+
+				const postData = await postResponse.json();
+
+				const pageResponse = await fetch(
+					`${universalData.root_url}/wp-json/content/v1/search?term=${searchTerm}`
+				);
+				const pageData = await pageResponse.json();
+
+				const resultsData = postData.concat(pageData);
+
+				generateSearchResults(resultsData);
+				console.log(resultsData);
+			} catch (err) {
+				generateError();
+			}
+
+			// return resultsData;
 		}
 
 		return getJSON(this.searchTerm.value);
@@ -132,3 +157,27 @@ class Search {
 }
 
 export default Search;
+
+// while ($mainQuery->have_posts()) {
+// 	$mainQuery->the_post(); //gets all the relevant data for the post ready to use
+
+// 	$column = '';
+
+// 	if (get_post_type() === 'post' || get_post_type() === 'page') {
+// 		$column = 'generalInfo';
+// 	} elseif (get_post_type() === 'professor') {
+// 		$column = 'professors';
+// 	} elseif (get_post_type() === 'campus') {
+// 		$column = 'campuses';
+// 	} elseif (get_post_type() === 'event') {
+// 		$column = 'events';
+// 	} elseif (get_post_type() === 'program') {
+// 		$column = 'programs';
+// 	}
+
+// 	//push the data in the #2 parameter onto the $mainQueryResults array
+// 	array_push($mainQueryResults[$column], [ //associative array to retrieve the data
+// 		'title' => get_the_title(),
+// 		'permalink' => get_the_permalink()
+// 	]);
+// }

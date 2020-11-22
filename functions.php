@@ -1,5 +1,15 @@
 <?php 
 
+require get_theme_file_path("/includes/search-route.php");
+
+function universal_custom_api() {
+    register_rest_field("post", "authorName", array(
+        "get_callback" => function() {return get_the_author();}
+    ));
+}
+
+add_action("rest_api_init", "universal_custom_api");
+
 function pageBanner($args = NULL) {
     // PHP logic here
 
