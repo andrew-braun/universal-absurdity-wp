@@ -86,25 +86,28 @@ class Search {
 
 	getSearchResults() {
 		const generateSearchResults = (data) => {
-			if (data.length) {
-				this.searchResults.innerHTML = data
-					.map(
-						(result) =>
-							`
-				<div class="search-result">
-				<h2 class="search-overlay__section-title"></h2>
-				<ul class="link-list min-list">							
-					<li>
-						<a href="/${result.link}">${result.title}</a> ${
-								result.type == "post" ? `by ${result.authorName}` : ""
-							}
-					</li>
-							
-				</ul>
-				</div>
-				`
-					)
-					.join("");
+			console.log(data);
+
+			if (data) {
+				this.searchResults.innerHTML = ``;
+				// this.searchResults.innerHTML = data
+				// 	.map(
+				// 		(result) =>
+				// 			`
+				// <div class="search-result">
+				// <h2 class="search-overlay__section-title"></h2>
+				// <ul class="link-list min-list">
+				// 	<li>
+				// 		<a href="/${result.link}">${result.title}</a> ${
+				// 				result.type == "post" ? `by ${result.authorName}` : ""
+				// 			}
+				// 	</li>
+
+				// </ul>
+				// </div>
+				// `
+				// 	)
+				// 	.join("");
 			} else {
 				this.searchResults.innerHTML = `
 				<div class="search-result">
@@ -122,26 +125,29 @@ class Search {
 
 		async function getJSON(searchTerm) {
 			try {
-				const postResponse = await fetch(
+				// const postResponse = await fetch(
+				// 	`${universalData.root_url}/wp-json/content/v1/search?term=${searchTerm}`
+				// );
+
+				// const postData = await postResponse.json();
+
+				// const pageResponse = await fetch(
+				// 	`${universalData.root_url}/wp-json/content/v1/search?term=${searchTerm}`
+				// );
+
+				// const pageData = await pageResponse.json();
+				// console.log(pageData);
+
+				const searchResponse = await fetch(
 					`${universalData.root_url}/wp-json/content/v1/search?term=${searchTerm}`
 				);
 
-				const postData = await postResponse.json();
+				const searchData = await searchResponse.json();
 
-				const pageResponse = await fetch(
-					`${universalData.root_url}/wp-json/content/v1/search?term=${searchTerm}`
-				);
-				const pageData = await pageResponse.json();
-
-				const resultsData = postData.concat(pageData);
-
-				generateSearchResults(resultsData);
-				console.log(resultsData);
+				generateSearchResults(searchData);
 			} catch (err) {
 				generateError();
 			}
-
-			// return resultsData;
 		}
 
 		return getJSON(this.searchTerm.value);
