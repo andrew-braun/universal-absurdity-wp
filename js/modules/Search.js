@@ -89,30 +89,83 @@ class Search {
 			console.log(data);
 
 			if (data) {
-				this.searchResults.innerHTML = ``;
-				// this.searchResults.innerHTML = data
-				// 	.map(
-				// 		(result) =>
-				// 			`
-				// <div class="search-result">
-				// <h2 class="search-overlay__section-title"></h2>
-				// <ul class="link-list min-list">
-				// 	<li>
-				// 		<a href="/${result.link}">${result.title}</a> ${
-				// 				result.type == "post" ? `by ${result.authorName}` : ""
-				// 			}
-				// 	</li>
+				this.searchResults.innerHTML = `
+				<div class="row">
+					<div class="one-third">
+						<h2 class="search-overlay__section-title">General Information</h2>
+						${
+							data.generalInfo.length
+								? `<ul class="link-list min-list">${data.generalInfo
+										.map(
+											(entry) =>
+												`<li><a href=${entry.link}>${entry.title}</a> ${
+													entry.postType == "post" ? `by ${entry.author}` : ""
+												}</li>`
+										)
+										.join("")}</ul>`
+								: "nope"
+						}
 
-				// </ul>
-				// </div>
-				// `
-				// 	)
-				// 	.join("");
+					</div>
+					
+					<div class="one-third">
+						<h2 class="search-overlay__section-title">Programs</h2>
+						${
+							data.program.length
+								? `<ul class="link-list min-list">${data.program
+										.map(
+											(entry) =>
+												`<li><a href="${entry.link}">${entry.title}</a> </li>`
+										)
+										.join("")}</ul>`
+								: `<a href="${universalData.root_url}/programs">View all programs</a>`
+						}
+
+						<h2 class="search-overlay__section-title">Professors</h2>
+						${
+							data.professor.length
+								? `<ul class="link-list min-list">${data.professor
+										.map(
+											(entry) =>
+												`<li><a href=${entry.link}>${entry.title}</a></li>`
+										)
+										.join("")}</ul>`
+								: ""
+						}
+					</div>
+					<div class="one-third">
+						<h2 class="search-overlay__section-title">Campuses</h2>
+						${
+							data.campus.length
+								? `<ul class="link-list min-list">${data.campus
+										.map(
+											(entry) =>
+												`<li><a href=${entry.link}>${entry.title}</a></li>`
+										)
+										.join("")}</ul>`
+								: `<a href="${universalData.root_url}/campuses">View all campuses</a>`
+						}
+
+						<h2 class="search-overlay__section-title">Events</h2>
+						${
+							data.event.length
+								? `<ul class="link-list min-list">${data.event
+										.map(
+											(entry) =>
+												`<li><a href=${entry.link}>${entry.title}</a></li>`
+										)
+										.join("")}</ul>`
+								: ""
+						}
+						</div>
+				</div>
+				`;
 			} else {
 				this.searchResults.innerHTML = `
 				<div class="search-result">
-				<h2 class="search-overlay__section-title">No results found</h2>
+					<h2 class="search-overlay__section-title">No results found</h2>
 				</div>`;
+				this.isSpinnerVisible = false;
 			}
 		};
 
@@ -163,27 +216,3 @@ class Search {
 }
 
 export default Search;
-
-// while ($mainQuery->have_posts()) {
-// 	$mainQuery->the_post(); //gets all the relevant data for the post ready to use
-
-// 	$column = '';
-
-// 	if (get_post_type() === 'post' || get_post_type() === 'page') {
-// 		$column = 'generalInfo';
-// 	} elseif (get_post_type() === 'professor') {
-// 		$column = 'professors';
-// 	} elseif (get_post_type() === 'campus') {
-// 		$column = 'campuses';
-// 	} elseif (get_post_type() === 'event') {
-// 		$column = 'events';
-// 	} elseif (get_post_type() === 'program') {
-// 		$column = 'programs';
-// 	}
-
-// 	//push the data in the #2 parameter onto the $mainQueryResults array
-// 	array_push($mainQueryResults[$column], [ //associative array to retrieve the data
-// 		'title' => get_the_title(),
-// 		'permalink' => get_the_permalink()
-// 	]);
-// }
