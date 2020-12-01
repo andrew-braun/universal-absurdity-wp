@@ -39,7 +39,8 @@ while ($mainQuery->have_posts()) {
 	} elseif (get_post_type() === "professor") {
 		array_push($mainResults["professor"], [ //associative array to retrieve the data
             "title" => get_the_title(),
-            "permalink" => get_the_permalink()
+            "permalink" => get_the_permalink(),
+            "image" => get_the_post_thumbnail_url()
         ]);
 	} elseif (get_post_type() === "campus") {
 		array_push($mainResults["campus"], [ //associative array to retrieve the data
@@ -47,9 +48,21 @@ while ($mainQuery->have_posts()) {
             "permalink" => get_the_permalink()
         ]);
 	} elseif (get_post_type() === "event") {
+        
+        $eventDate = new DateTime(get_field("event_date"));
+        $description = null;
+        if (has_excerpt()) {
+            $description = get_the_excerpt();
+        } else {
+            $description = wp_trim_words(get_the_content(), 18);
+        }
 		array_push($mainResults["event"], [ //associative array to retrieve the data
             "title" => get_the_title(),
-            "permalink" => get_the_permalink()
+            "permalink" => get_the_permalink(),
+            "month" => $eventDate->format("M"),
+            "day" => $eventDate->format("d"),
+            "description" => $description,
+            
         ]);
 	} elseif (get_post_type() === "program") {
 		array_push($mainResults["program"], [ //associative array to retrieve the data

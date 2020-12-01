@@ -124,10 +124,18 @@ class Search {
 						<h2 class="search-overlay__section-title">Professors</h2>
 						${
 							data.professor.length
-								? `<ul class="link-list min-list">${data.professor
+								? `<ul class="professor-cards">${data.professor
 										.map(
 											(entry) =>
-												`<li><a href=${entry.link}>${entry.title}</a></li>`
+												`
+												<li class="professor-card__list-item">
+													<a class="professor-card" href="${entry.link}">
+														<img class="professor-card__image" src="${entry.image}" />
+														<span class="professor-card__name">${entry.title}</span>
+													</a>
+												</li>
+							
+												`
 										)
 										.join("")}</ul>`
 								: ""
@@ -148,14 +156,28 @@ class Search {
 
 						<h2 class="search-overlay__section-title">Events</h2>
 						${
-							data.event.length
-								? `<ul class="link-list min-list">${data.event
-										.map(
-											(entry) =>
-												`<li><a href=${entry.link}>${entry.title}</a></li>`
-										)
-										.join("")}</ul>`
-								: ""
+							data.event.length ? (
+								`<ul class="link-list min-list">${data.event
+									.map(
+										(entry) =>
+											`
+										<div class="event-summary">
+										<a class="event-summary__date t-center" href="${entry.link}">
+											<span class="event-summary__month">${entry.month}</span>
+											<span class="event-summary__day">${entry.day}</span>
+										</a>
+										<div class="event-summary__content">
+											<h5 class="event-summary__title headline headline--tiny"><a href="${entry.link}">${entry.title}</a></h5>
+											<p> ${entry.description}
+												<a href="${entry.link}" class="nu gray"> Learn more</a></p>
+										</div>
+										</div>
+											`
+									)
+									.join("")}</ul>`
+							) : (
+								<a href="${universalData.root_url}/events">View all events</a>
+							)
 						}
 						</div>
 				</div>
