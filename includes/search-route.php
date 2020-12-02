@@ -67,33 +67,49 @@ while ($mainQuery->have_posts()) {
 	} elseif (get_post_type() === "program") {
 		array_push($mainResults["program"], [ //associative array to retrieve the data
             "title" => get_the_title(),
-            "permalink" => get_the_permalink()
+            "permalink" => get_the_permalink(),
+            "id" => get_the_id()
         ]);
 	}
 
-	//push the data in the #2 parameter onto the $mainQueryResults array
-	// array_push($mainResults[$category], [ //associative array to retrieve the data
-	// 	'title' => get_the_title(),
-	// 	'permalink' => get_the_permalink()
-	// ]);
 }
 
-    
-    // while($mainQuery->have_posts()) {
-    //     $mainQuery->the_post();
-    //     if (get_post_type() === "post" OR get_post_type() === "page") {
-    //         array_push($results["generalInfo"], array(
-    //             "title" => get_the_title(),
-    //             "link" => get_the_permalink(),
-    //         ));
-    //     } else {
-    //         array_push($results[get_post_type()], array(
-    //             "title" => get_the_title(),
-    //             "link" => get_the_permalink(),
-    //         ));
-    //     }
-    // }
+    if ($mainResults["program"]) {
+        $programMetaQuery = array("relation" => "OR");
 
+        foreach($mainResults["program"] as $item) {
+            array_push($programMetaQuery, 
+            array(
+                "key" => "related_program",
+                "compare" => "LIKE",
+                "value" => '"' . $item["id"] . '"',
+    
+            )
+        );
+        }
+    
+        $programRelationshipQuery = new WP_Query(array(
+            "post_type" => "professor",
+            "meta_query" => $programMetaQuery
+            )
+        );
+    
+        while ($programRelationshipQuery->have_posts()) {
+            $programRelationshipQuery->the_post();
+    
+            if (get_post_type() === "professor") {
+                array_push($mainResults["professor"], [ //associative array to retrieve the data
+                    "title" => get_the_title(),
+                    "permalink" => get_the_permalink(),
+                    "image" => get_the_post_thumbnail_url()
+                ]);
+            }
+        }
+    
+        $mainResults["professor"] = array_values(array_unique($mainResults["professor"], SORT_REGULAR));
+      
+    }
+  
     return $mainResults;
 }
 

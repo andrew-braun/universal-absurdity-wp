@@ -95,12 +95,12 @@ class Search {
 								? `<ul class="link-list min-list">${data.generalInfo
 										.map(
 											(entry) =>
-												`<li><a href=${entry.link}>${entry.title}</a> ${
+												`<li><a href=${entry.permalink}>${entry.title}</a> ${
 													entry.postType == "post" ? `by ${entry.author}` : ""
 												}</li>`
 										)
 										.join("")}</ul>`
-								: "nope"
+								: ""
 						}
 
 					</div>
@@ -112,7 +112,7 @@ class Search {
 								? `<ul class="link-list min-list">${data.program
 										.map(
 											(entry) =>
-												`<li><a href="${entry.link}">${entry.title}</a> </li>`
+												`<li><a href="${entry.permalink}">${entry.title}</a> </li>`
 										)
 										.join("")}</ul>`
 								: `<a href="${universalData.root_url}/programs">View all programs</a>`
@@ -126,7 +126,7 @@ class Search {
 											(entry) =>
 												`
 												<li class="professor-card__list-item">
-													<a class="professor-card" href="${entry.link}">
+													<a class="professor-card" href="${entry.permalink}">
 														<img class="professor-card__image" src="${entry.image}" />
 														<span class="professor-card__name">${entry.title}</span>
 													</a>
@@ -145,7 +145,7 @@ class Search {
 								? `<ul class="link-list min-list">${data.campus
 										.map(
 											(entry) =>
-												`<li><a href=${entry.link}>${entry.title}</a></li>`
+												`<li><a href=${entry.permalink}>${entry.title}</a></li>`
 										)
 										.join("")}</ul>`
 								: `<a href="${universalData.root_url}/campuses">View all campuses</a>`
@@ -159,14 +159,14 @@ class Search {
 											(entry) =>
 												`
 										<div class="event-summary">
-										<a class="event-summary__date t-center" href="${entry.link}">
+										<a class="event-summary__date t-center" href="${entry.permalink}">
 											<span class="event-summary__month">${entry.month}</span>
 											<span class="event-summary__day">${entry.day}</span>
 										</a>
 										<div class="event-summary__content">
 											<h5 class="event-summary__title headline headline--tiny"><a href="${entry.link}">${entry.title}</a></h5>
 											<p> ${entry.description}
-												<a href="${entry.link}" class="nu gray"> Learn more</a></p>
+												<a href="${entry.permalink}" class="nu gray"> Learn more</a></p>
 										</div>
 										</div>
 											`
