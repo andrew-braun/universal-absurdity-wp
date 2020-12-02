@@ -86,10 +86,7 @@ class Search {
 
 	getSearchResults() {
 		const generateSearchResults = (data) => {
-			console.log(data);
-
-			if (data) {
-				this.searchResults.innerHTML = `
+			this.searchResults.innerHTML = `
 				<div class="row">
 					<div class="one-third">
 						<h2 class="search-overlay__section-title">General Information</h2>
@@ -156,11 +153,11 @@ class Search {
 
 						<h2 class="search-overlay__section-title">Events</h2>
 						${
-							data.event.length ? (
-								`<ul class="link-list min-list">${data.event
-									.map(
-										(entry) =>
-											`
+							data.event.length
+								? `<ul class="link-list min-list">${data.event
+										.map(
+											(entry) =>
+												`
 										<div class="event-summary">
 										<a class="event-summary__date t-center" href="${entry.link}">
 											<span class="event-summary__month">${entry.month}</span>
@@ -173,22 +170,13 @@ class Search {
 										</div>
 										</div>
 											`
-									)
-									.join("")}</ul>`
-							) : (
-								<a href="${universalData.root_url}/events">View all events</a>
-							)
+										)
+										.join("")}</ul>`
+								: `<a href="${universalData.root_url}/events">View all events</a>`
 						}
 						</div>
 				</div>
 				`;
-			} else {
-				this.searchResults.innerHTML = `
-				<div class="search-result">
-					<h2 class="search-overlay__section-title">No results found</h2>
-				</div>`;
-				this.isSpinnerVisible = false;
-			}
 		};
 
 		const generateError = () => {
@@ -200,19 +188,6 @@ class Search {
 
 		async function getJSON(searchTerm) {
 			try {
-				// const postResponse = await fetch(
-				// 	`${universalData.root_url}/wp-json/content/v1/search?term=${searchTerm}`
-				// );
-
-				// const postData = await postResponse.json();
-
-				// const pageResponse = await fetch(
-				// 	`${universalData.root_url}/wp-json/content/v1/search?term=${searchTerm}`
-				// );
-
-				// const pageData = await pageResponse.json();
-				// console.log(pageData);
-
 				const searchResponse = await fetch(
 					`${universalData.root_url}/wp-json/content/v1/search?term=${searchTerm}`
 				);
@@ -222,6 +197,7 @@ class Search {
 				generateSearchResults(searchData);
 			} catch (err) {
 				generateError();
+				console.log(err);
 			}
 		}
 
