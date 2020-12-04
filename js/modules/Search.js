@@ -66,21 +66,25 @@ class Search {
 		}
 	}
 
-	searchHandler() {
-		if (this.searchTerm.value !== this.previousSearchValue) {
-			clearTimeout(this.typingTimer);
+	searchHandler(event) {
+		console.log(`1: ${event.key}`);
+		if (/^([\w]){1}$/i.test(event.key)) {
+			console.log(`2: ${event.key}`);
+			if (this.searchTerm.value !== this.previousSearchValue) {
+				clearTimeout(this.typingTimer);
 
-			if (this.searchTerm.value) {
-				if (!this.isSpinnerVisible) {
-					this.searchResults.innerHTML = "<div class='spinner-loader'></div>";
-					this.isSpinnerVisible = true;
+				if (this.searchTerm.value) {
+					if (!this.isSpinnerVisible) {
+						this.searchResults.innerHTML = "<div class='spinner-loader'></div>";
+						this.isSpinnerVisible = true;
+					}
+					this.typingTimer = setTimeout(() => this.getSearchResults(), 400);
+					this.previousSearchValue = this.searchTerm.value;
 				}
-				this.typingTimer = setTimeout(() => this.getSearchResults(), 400);
-				this.previousSearchValue = this.searchTerm.value;
+			} else {
+				this.searchResults.innerHTML = "";
+				this.isSpinnerVisible = false;
 			}
-		} else {
-			this.searchResults.innerHTML = "";
-			this.isSpinnerVisible = false;
 		}
 	}
 
