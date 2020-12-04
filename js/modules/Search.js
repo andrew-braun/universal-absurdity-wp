@@ -21,6 +21,8 @@ class Search {
 		this.searchTerm.value = "";
 		setTimeout(() => this.searchTerm.focus(), 400);
 		this.isOverlayOpen = true;
+
+		return false;
 	}
 
 	closeOverlay() {
@@ -213,7 +215,7 @@ class Search {
 		this.searchOpen.forEach((element) =>
 			element.addEventListener("click", (event) => {
 				event.preventDefault();
-				this.openOverlay.bind(this);
+				this.openOverlay();
 			})
 		);
 		this.searchClose.addEventListener("click", this.closeOverlay.bind(this));
