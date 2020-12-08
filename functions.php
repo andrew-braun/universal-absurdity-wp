@@ -52,11 +52,11 @@ function universal_imports() {
     wp_enqueue_script("google-map", "//maps.googleapis.com/maps/api/js?key=AIzaSyCaNJgJD-c3k0cGovvCiZASvlPAOJCn8jw", NULL, "1.0", true);
     if (strstr($_SERVER["SERVER_NAME"], "universal-absurdity.local")) {
         wp_enqueue_script("universal-js", "http://localhost:3000/bundled.js", NULL, "1.0", true);
-        wp_enqueue_style("our-main-styles", get_theme_file_uri("/bundled-assets/styles.5270ce0561d57b985c13.css"));
+        wp_enqueue_style("our-main-styles", get_theme_file_uri("/bundled-assets/styles.df62b3b2c9df4d70618e.css"));
     } else {
         wp_enqueue_script("our-vendors-js", get_theme_file_uri("/bundled-assets/vendors~scripts.8c97d901916ad616a264.js"), NULL, "1.0", true);
-        wp_enqueue_script("universal-js", get_theme_file_uri("/bundled-assets/scripts.5270ce0561d57b985c13.js"), NULL, "1.0", true);
-        wp_enqueue_style("our-main-styles", get_theme_file_uri("/bundled-assets/styles.5270ce0561d57b985c13.css"));
+        wp_enqueue_script("universal-js", get_theme_file_uri("/bundled-assets/scripts.f7870004fb1b3e9c55cc.js"), NULL, "1.0", true);
+        wp_enqueue_style("our-main-styles", get_theme_file_uri("/bundled-assets/styles.f7870004fb1b3e9c55cc.css"));
     }
     wp_localize_script("universal-js", "universalData", array(
         "root_url" => get_site_url()
@@ -113,5 +113,49 @@ function universalMapKey($api) {
 }
 
 add_filter("acf/fields/google_map/api", "universalMapKey");
+
+// Redirect subscriber accounts to homepage, not admin
+add_action("admin_init", "redirectSubscribersToFrontend");
+
+function redirectSubscribersToFrontend() {
+    $currentUser = wp_get_current_user();
+    if (count($currentUser->roles) == 1 AND $currentUser->roles[0] == "subscriber") {
+        wp_redirect(site_url("/"));
+        exit;
+    }
+}
+
+add_action("wp_loaded", "noSubscribersAdminBar");
+
+function noSubscribersAdminBar() {
+    $currentUser = wp_get_current_user();
+    if (count($currentUser->roles) == 1 AND $currentUser->roles[0] == "subscriber") {
+        show_admin_bar(false);
+    }
+}
+
+// Customize login page
+add_filter("login_headerurl", "headerURL");
+
+function headerURL() {
+    return esc_url(site_url());
+}
+
+add_filter("login_headertitle", "loginTitle");
+
+function loginTitle() {
+    return get_bloginfo("name");
+}
+
+add_action("login_enqueue_scripts", "mainLoginCSS");
+
+function mainLoginCSS() {
+    wp_enqueue_style("google-fonts", "https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i");
+    // go to direct site styles instead of bundled because webpack isn't updating hashes
+    wp_enqueue_style("styles", get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style("main-styles", get_theme_file_uri("/bundled-assets/styles.f7870004fb1b3e9c55cc.css"));
+    
+}
+
 
 ?>

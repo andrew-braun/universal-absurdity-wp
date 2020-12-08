@@ -772,10 +772,11 @@ body.login .button-primary:focus {
 	box-shadow: 0 1px 0 rgb(186, 78, 56);
 }
 body.login {
-	background-color: #faf0ca;
+	background-color: #0d3b66;
+	color: white;
 }
 .login h1 a {
-	color: #0d3b66;
+	color: white;
 	font-size: 30px;
 	font-weight: 300;
 	background-image: none;
@@ -783,6 +784,19 @@ body.login {
 	height: auto;
 	text-indent: 0;
 }
+.login a {
+	color: rgb(199, 80, 56);
+}
+.login #backtoblog a,
+.login #nav a {
+	color: white;
+}
+
+.login #backtoblog a:hover,
+.login #nav a:hover {
+	color: rgb(199, 80, 56);
+}
+
 .btn {
 	display: inline-block;
 	cursor: pointer;

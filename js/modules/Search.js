@@ -14,7 +14,7 @@ class Search {
 		this.previousSearchValue;
 	}
 
-	// 2. Methods
+	// 2. Methods for search
 	openOverlay() {
 		this.searchOverlay.classList.add("search-overlay--active");
 		document.querySelector("body").classList.add("body-no-scroll");
@@ -210,7 +210,7 @@ class Search {
 		return getJSON(this.searchTerm.value);
 	}
 
-	// 3. Events
+	// 3. Event listeners
 	events() {
 		this.searchOpen.forEach((element) =>
 			element.addEventListener("click", (event) => {
