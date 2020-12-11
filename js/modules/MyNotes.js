@@ -4,7 +4,7 @@ class MyNotes {
 		this.deleteButtons = document.querySelectorAll(".delete-note");
 		this.editButtons = document.querySelectorAll(".edit-note");
 		this.titleFields = document.querySelectorAll(".note-title-field");
-		this.bodyfields = documents.querySelectorAll(".note-body-field");
+		this.bodyfields = document.querySelectorAll(".note-body-field");
 		this.events();
 	}
 
@@ -41,31 +41,37 @@ class MyNotes {
 	async editNote(event) {
 		const thisNote = event.target.parentNode;
 		const noteId = thisNote.dataset.noteId;
+		const title = thisNote.querySelector(".note-title-field");
+		const body = thisNote.querySelector(".note-body-field");
+		const saveButton = thisNote.querySelector(".update-note");
+		const cancelButton = thisNote.querySelector(".cancel-note");
 
-		try {
-			const editResponse = await fetch(
-				`${universalData.root_url}/wp-json/wp/v2/note/${noteId}`,
-				{
-					method: "POST",
-					headers: {
-						"X-WP-Nonce": universalData.nonce,
-					},
-				}
-			);
-			this.fadeIn(thisNote);
-			console.log("edited!");
-			return editResponse.json();
-		} catch (err) {
-			console.log(err);
-		}
+		title.removeAttribute("readonly");
+		title.classList.add("note-active-field");
+		body.removeAttribute("readonly");
+		body.classList.add("note-active-field");
+		saveButton.classList.add("update-note--visible");
+
+		// try {
+		// 	const editResponse = await fetch(
+		// 		`${universalData.root_url}/wp-json/wp/v2/note/${noteId}`,
+		// 		{
+		// 			method: "POST",
+		// 			headers: {
+		// 				"X-WP-Nonce": universalData.nonce,
+		// 			},
+		// 		}
+		// 	);
+		// 	this.fadeIn(thisNote);
+		// 	console.log("edited!");
+		// 	return editResponse.json();
+		// } catch (err) {
+		// 	console.log(err);
+		// }
 	}
 
 	/* Event listeners */
 	events() {
-		// this.deleteButtons.forEach((button) => {
-		// 	this.button.addEventListener("click", this.deleteNote.bind(this));
-		// });
-
 		this.deleteButtons.forEach((button) =>
 			button.addEventListener("click", (event) => this.deleteNote(event))
 		);
