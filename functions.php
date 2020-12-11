@@ -59,7 +59,8 @@ function universal_imports() {
         wp_enqueue_style("our-main-styles", get_theme_file_uri("/bundled-assets/styles.f7870004fb1b3e9c55cc.css"));
     }
     wp_localize_script("universal-js", "universalData", array(
-        "root_url" => get_site_url()
+        "root_url" => get_site_url(),
+        "nonce" => wp_create_nonce("wp_rest")
     ));
 }
 /* Execute the import function */
