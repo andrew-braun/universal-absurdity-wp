@@ -52,6 +52,10 @@ class MyNotes {
 			this.makeNoteEditable(event, title, body, saveButton, editButton);
 			thisNote.setAttribute("data-state", "editable");
 		}
+
+		saveButton.addEventListener("click", () =>
+			this.updateNote(event, thisNote, title, body, saveButton, editButton)
+		);
 	}
 
 	makeNoteEditable(event, title, body, saveButton, editButton) {
@@ -75,23 +79,36 @@ class MyNotes {
 		saveButton.classList.remove("update-note--visible");
 		editButton.innerHTML = `<i class="fa fa-pencil" aria-hidden="true"></i> Edit`;
 	}
-	// try {
-	// 	const editResponse = await fetch(
-	// 		`${universalData.root_url}/wp-json/wp/v2/note/${noteId}`,
-	// 		{
-	// 			method: "POST",
-	// 			headers: {
-	// 				"X-WP-Nonce": universalData.nonce,
-	// 			},
-	// 		}
-	// 	);
-	// 	this.fadeIn(thisNote);
-	// 	console.log("edited!");
-	// 	return editResponse.json();
-	// } catch (err) {
-	// 	console.log(err);
-	// }
-	// }
+
+	async updateNote(event, thisNote, title, body, saveButton, editButton) {
+		console.log(saveButton);
+		const noteId = thisNote.dataset.noteId;
+
+		const updatedPost = {
+			title: title.value,
+			content: body.value,
+		};
+		try {
+			const editResponse = await fetch(
+				`${universalData.root_url}/wp-json/wp/v2/note/${noteId}`,
+				{
+					method: "POST",
+					headers: {
+						"X-WP-Nonce": universalData.nonce,
+						"Content-Type": "application/json;charset=utf-8",
+					},
+					credentials: "same-origin",
+					body: JSON.stringify(updatedPost),
+				}
+			);
+			this.makeNoteReadOnly(event, title, body, saveButton, editButton);
+			console.log("updated!!");
+			console.log(editResponse);
+			return editResponse;
+		} catch (err) {
+			console.log(err);
+		}
+	}
 
 	/* Event listeners */
 	events() {
