@@ -1,10 +1,13 @@
 class MyNotes {
 	/* Constructor */
 	constructor() {
+		this.noteList = document.querySelector(".note-list");
 		this.deleteButtons = document.querySelectorAll(".delete-note");
 		this.editButtons = document.querySelectorAll(".edit-note");
 		this.titleFields = document.querySelectorAll(".note-title-field");
 		this.bodyfields = document.querySelectorAll(".note-body-field");
+		this.submitButton = document.querySelector(".submit-note");
+
 		this.events();
 	}
 
@@ -81,7 +84,6 @@ class MyNotes {
 	}
 
 	async updateNote(event, thisNote, title, body, saveButton, editButton) {
-		console.log(saveButton);
 		const noteId = thisNote.dataset.noteId;
 
 		const updatedPost = {
@@ -110,6 +112,42 @@ class MyNotes {
 		}
 	}
 
+	async createNote(event) {
+		const title = document.querySelector(".new-note-title");
+		const content = document.querySelector(".new-note-body");
+
+		const newNote = {
+			title: title.value,
+			content: content.value,
+			status: "publish",
+		};
+
+		try {
+			const createResponse = await fetch(
+				`${universalData.root_url}/wp-json/wp/v2/note/`,
+				{
+					method: "POST",
+					headers: {
+						"X-WP-Nonce": universalData.nonce,
+						"Content-Type": "application/json;charset=utf-8",
+					},
+					credentials: "same-origin",
+					body: JSON.stringify(newNote),
+				}
+			);
+
+			const newNoteLi = document.createElement("li");
+			newNoteLi.appendChild(document.createTextNode(title.value));
+			this.noteList.prepend(newNoteLi);
+
+			title.value = "";
+			content.value = "";
+			return createResponse;
+		} catch (err) {
+			console.log(err);
+		}
+	}
+
 	/* Event listeners */
 	events() {
 		this.deleteButtons.forEach((button) =>
@@ -118,12 +156,9 @@ class MyNotes {
 		this.editButtons.forEach((button) =>
 			button.addEventListener("click", (event) => this.editNote(event))
 		);
-		// this.titleFields.forEach((button) =>
-		// 	button.addEventListener("click", (event) => this.editNote(event))
-		// );
-		// this.bodyFields.forEach((button) =>
-		// 	button.addEventListener("click", (event) => this.editNote(event))
-		// );
+		this.submitButton.addEventListener("click", (event) =>
+			this.createNote(event)
+		);
 	}
 }
 
