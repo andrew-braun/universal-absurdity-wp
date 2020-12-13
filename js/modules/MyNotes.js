@@ -136,9 +136,20 @@ class MyNotes {
 				}
 			);
 
-			const newNoteLi = document.createElement("li");
-			newNoteLi.appendChild(document.createTextNode(title.value));
-			this.noteList.prepend(newNoteLi);
+			const results = await createResponse.json();
+
+			this.noteList.insertAdjacentHTML(
+				"afterbegin",
+				`
+				<li data-note-id=${results.id}>
+					<input class="note-title-field" readonly value="${results.title.raw}" />
+					<span class="edit-note" ><i class="fa fa-pencil" aria-hidden="true"></i> Edit</span>
+					<span class="delete-note" ><i class="fa fa-trash" aria-hidden="true"></i> Delete</span>
+					<textarea class="note-body-field" readonly > ${results.content.raw} </textarea>
+					<span class="update-note btn btn--blue btn--small" ><i class="fa fa-arrow-right" aria-hidden="true"></i> Save</span>
+				</li>
+				`
+			);
 
 			title.value = "";
 			content.value = "";
@@ -150,12 +161,14 @@ class MyNotes {
 
 	/* Event listeners */
 	events() {
-		this.deleteButtons.forEach((button) =>
-			button.addEventListener("click", (event) => this.deleteNote(event))
-		);
-		this.editButtons.forEach((button) =>
-			button.addEventListener("click", (event) => this.editNote(event))
-		);
+		this.noteList.addEventListener("click", (event) => {
+			if (event.target && event.target.matches(".delete-note")) {
+				this.deleteNote(event);
+			} else if (event.target && event.target.matches(".edit-note")) {
+				this.editNote(event);
+			}
+		});
+
 		this.submitButton.addEventListener("click", (event) =>
 			this.createNote(event)
 		);
