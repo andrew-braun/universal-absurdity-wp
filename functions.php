@@ -158,5 +158,14 @@ function mainLoginCSS() {
     
 }
 
+// Force all note posts status private
+function makeNotePrivate($data) {
+    if($data["post_type"] == "note" AND $data["post_status"] != "trash") {
+        $data["post_status"] = "private";
+    }
+    return $data;
+}
+
+add_filter("wp_insert_post_data", "makeNotePrivate");
 
 ?>

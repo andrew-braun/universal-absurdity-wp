@@ -34,7 +34,6 @@ class MyNotes {
 				}
 			);
 			this.fadeOut(thisNote);
-			console.log("success!");
 			return deleteResponse.json();
 		} catch (err) {
 			console.log(err);
@@ -104,8 +103,6 @@ class MyNotes {
 				}
 			);
 			this.makeNoteReadOnly(event, title, body, saveButton, editButton);
-			console.log("updated!!");
-			console.log(editResponse);
 			return editResponse;
 		} catch (err) {
 			console.log(err);
@@ -119,7 +116,7 @@ class MyNotes {
 		const newNote = {
 			title: title.value,
 			content: content.value,
-			status: "publish",
+			status: "private",
 		};
 
 		try {
