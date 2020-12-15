@@ -1,21 +1,27 @@
 class MyNotes {
 	/* Constructor */
 	constructor() {
-		this.noteList = document.querySelector(".note-list");
-		this.deleteButtons = document.querySelectorAll(".delete-note");
-		this.editButtons = document.querySelectorAll(".edit-note");
-		this.titleFields = document.querySelectorAll(".note-title-field");
-		this.bodyfields = document.querySelectorAll(".note-body-field");
-		this.submitButton = document.querySelector(".submit-note");
+		if (document.querySelector("#my-notes")) {
+			this.noteList = document.querySelector(".note-list");
+			this.deleteButtons = document.querySelectorAll(".delete-note");
+			this.editButtons = document.querySelectorAll(".edit-note");
+			this.titleFields = document.querySelectorAll(".note-title-field");
+			this.bodyfields = document.querySelectorAll(".note-body-field");
+			this.submitButton = document.querySelector(".submit-note");
 
-		this.events();
+			this.events();
+		}
 	}
 
 	fadeOut(element) {
 		element.classList.add("fade-out");
 	}
 	fadeIn(element) {
-		element.classList.add("fade-in");
+		setTimeout(() => {
+			finalHeight = `${element.offsetHeight}px`;
+			element.style.height = "0px";
+		});
+		// element.classList.add("fade-in");
 	}
 
 	/* Functions/methods */
@@ -33,8 +39,19 @@ class MyNotes {
 					},
 				}
 			);
-			this.fadeOut(thisNote);
-			return deleteResponse.json();
+
+			const response = await deleteResponse.json();
+
+			console.log(response);
+			if (response.userNoteCount < 5) {
+				document
+					.querySelector(".note-limit-message")
+					.classList.remove("active");
+			}
+			setTimeout(() => this.fadeOut(thisNote), 20);
+
+			setTimeout(() => thisNote.remove(), 401);
+			return response;
 		} catch (err) {
 			console.log(err);
 		}
@@ -144,7 +161,8 @@ class MyNotes {
 					<span class="delete-note" ><i class="fa fa-trash" aria-hidden="true"></i> Delete</span>
 					<textarea class="note-body-field" readonly > ${results.content.raw} </textarea>
 					<span class="update-note btn btn--blue btn--small" ><i class="fa fa-arrow-right" aria-hidden="true"></i> Save</span>
-				</li>
+					
+					</li>
 				`
 			);
 
@@ -152,7 +170,13 @@ class MyNotes {
 			content.value = "";
 			return createResponse;
 		} catch (err) {
-			console.log(err);
+			console.error(err);
+			if (
+				err instanceof SyntaxError &&
+				err.message === "Unexpected token N in JSON at position 0"
+			) {
+				document.querySelector(".note-limit-message").classList.add("active");
+			}
 		}
 	}
 
