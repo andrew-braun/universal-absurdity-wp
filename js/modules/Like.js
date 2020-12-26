@@ -15,12 +15,32 @@ class Like {
 			}
 		};
 
-		this.createLike = (event) => {
-			alert("Create");
+		this.createLike = async (event) => {
+			try {
+				const response = await fetch(
+					`${universalData.root_url}/wp-json/universal/v1/manageLike`,
+					{
+						method: "POST",
+					}
+				);
+				await console.log(response);
+			} catch (error) {
+				console.error(error);
+			}
 		};
 
-		this.deleteLike = (event) => {
-			alert("Delete");
+		this.deleteLike = async (event) => {
+			try {
+				const response = await fetch(
+					`${universalData.root_url}/wp-json/universal/v1/manageLike`,
+					{
+						method: "DELETE",
+					}
+				);
+				await console.log(response);
+			} catch (error) {
+				console.error(error);
+			}
 		};
 	}
 
