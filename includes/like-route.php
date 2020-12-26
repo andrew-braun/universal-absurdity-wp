@@ -13,8 +13,18 @@ function universalLikeRoutes() {
     ));
 }
 
-function createLike() {
-    return "create like!";
+function createLike($headers) {
+    $professor = sanitize_text_field($headers["professorId"]);
+
+    wp_insert_post(array(
+        "post_type" => "like",
+        "post_status" => "publish",
+        "post_title" => "PHP_Create_Post_2",
+        "meta_input" => array(
+            "liked_professor_id" => $professor
+        ) 
+    ));
+    
 }
 
 function deleteLike() {
