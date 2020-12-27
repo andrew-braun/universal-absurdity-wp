@@ -31,6 +31,12 @@ class Like {
 					}
 				);
 				await console.log(response);
+
+				this.likeBox.dataset.exists = "yes";
+				const likeBoxCount = this.likeBox.querySelector(".like-count");
+				let likeCount = parseInt(likeBoxCount.innerText, 10);
+				likeCount++;
+				likeBoxCount.innerText = likeCount;
 			} catch (error) {
 				console.error(error);
 			}
