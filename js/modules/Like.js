@@ -25,6 +25,7 @@ class Like {
 						method: "POST",
 						headers: {
 							"Content-Type": "application/json",
+							"X-WP-Nonce": universalData.nonce,
 						},
 						body: JSON.stringify(data),
 					}
