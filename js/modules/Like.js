@@ -30,27 +30,43 @@ class Like {
 						body: JSON.stringify(data),
 					}
 				);
-				await console.log(response);
+
+				const responseData = await response.json();
+				console.log(responseData);
 
 				this.likeBox.dataset.exists = "yes";
 				const likeBoxCount = this.likeBox.querySelector(".like-count");
 				let likeCount = parseInt(likeBoxCount.innerText, 10);
 				likeCount++;
 				likeBoxCount.innerText = likeCount;
+
+				this.likeBox.dataset.like = await responseData;
 			} catch (error) {
 				console.error(error);
 			}
 		};
 
 		this.deleteLike = async (event, likeBox) => {
+			const data = { like: this.likeBox.dataset.like };
 			try {
 				const response = await fetch(
 					`${universalData.root_url}/wp-json/universal/v1/manageLike`,
 					{
 						method: "DELETE",
+						headers: {
+							"Content-Type": "application/json",
+							"X-WP-Nonce": universalData.nonce,
+						},
+						body: JSON.stringify(data),
 					}
 				);
-				await console.log(response);
+				this.likeBox.dataset.exists = "no";
+				const likeBoxCount = this.likeBox.querySelector(".like-count");
+				let likeCount = parseInt(likeBoxCount.innerText, 10);
+				likeCount--;
+				likeBoxCount.innerText = likeCount;
+
+				this.likeBox.dataset.like = "";
 			} catch (error) {
 				console.error(error);
 			}

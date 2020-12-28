@@ -47,6 +47,7 @@ while (have_posts()) {
                         }
                     ?>
                     <span class="like-box"
+                    data-like="<?php echo $existQuery->posts[0]->ID; ?>"
                     data-exists="<?php echo $existStatus ?>"
                     data-professor="<?php the_ID() ?>"
                      >
