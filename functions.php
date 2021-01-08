@@ -1,5 +1,14 @@
 <?php 
 
+function universalQueryVars($vars) {
+    $vars[] = "skyColor";
+    $vars[] = "grassColor";
+
+    return $vars;
+}
+
+add_filter("query_vars", "universalQueryVars");
+
 require get_theme_file_path("/includes/search-route.php");
 require get_theme_file_path("/includes/like-route.php");
 
