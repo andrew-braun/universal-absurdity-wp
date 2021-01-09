@@ -58,6 +58,10 @@
     </div>
 </footer>
 
+<div id="app">
+
+</div>
+
 
 <?php wp_footer(); ?>
 </body>
